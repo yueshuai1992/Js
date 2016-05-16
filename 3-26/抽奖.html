@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.but{
+			
+		}
+	</style>
+</head>
+<body>
+	<span class="hours"></span><a>:</a>
+	<span class="minutes"></span><a>:</a>
+	<span class="seconds"></span>
+	<input type="button" value="抽奖" class="but">
+	<script src="../jquery-1.11.1.js"></script>
+	<script>
+		var cTime = [10,1,0];
+		var clearHours = 0;
+		var clearMinutes = 0;
+		var clearSeconds = 0;
+		var t =setInterval(funTime,1000);
+		function funTime(){
+			var  date = new Date();
+			var hours = date.getHours();
+			var minutes= date.getMinutes();
+			var seconds= date.getSeconds();
+			
+			clearHours=cTime[0]-hours;
+			if(cTime[1]>=minutes)
+			{
+				clearMinutes=cTime[1]-minutes;
+			}
+			else
+			{
+				clearMinutes=cTime[1]+60-minutes;
+				clearHours--;
+			}
+			if(cTime[2]>=seconds)
+			{
+				clearSeconds=cTime[2]-seconds;
+			}
+			else
+			{
+				clearSeconds=cTime[2]+60-seconds;
+				clearMinutes--;
+			}
+			$(".hours").text(clearHours);
+			$(".minutes").text(clearMinutes);
+			$(".seconds").text(clearSeconds);
+			
+			if(clearHours==0&&clearMinutes==0&&clearSeconds==0){
+			$(".but").css("background-color","red");
+			clearInterval(t);
+			}
+		}
+		
+		
+		
+		
+	</script>
+</body>
+</html>

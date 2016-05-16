@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		var arr = [5.32,-9,8,-7,9.54,54,26,-4,862,95];
+		//提取该数组的第二个-9
+		var number = arr[1];
+		//取-9的绝对值
+		var abs = Math.abs(number);
+		alert(abs);
+		//向下取整（去尾法）
+		var numberfloor = arr[0];
+		var floor = Math.floor(numberfloor);
+		alert(floor);
+		//向上取整（进一法）
+		var ceil = Math.ceil(numberfloor);
+		alert(ceil);
+		//生成0到1之间的随机数，[0<=x<1) 小数点后16位
+		alert(Math.random());
+		//四舍五入
+		var numberround = arr[0];//5.32变成5
+		alert(Math.round(numberround));
+		var numberround2 = arr[4];
+		alert(Math.round(numberround2));//9.54变成10
+		//正弦函数
+		var numbersin = arr[2];
+		alert(Math.sin(numbersin));
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="text">
+	<input type="button"value="添加" id="but">
+	<ul id="list">
+		<li>哈密瓜<span class="del">删除</span></li>
+		<li>大鸭梨<span class="del">删除</span></li>
+		<li>水蜜桃<span class="del">删除</span></li>
+	</ul>
+	<script>
+		var oBtn = document.getElementById("text");
+		var aBtn = document.getElementById("but");
+		var lBtn = document.getElementById("list");
+		aBtn.onclick = function(){
+			var val = oBtn.value;
+			var oLi = document.createElement("li");
+			var oText = document.createTextNode(val);
+			oLi.appendChild(oText);
+			lBtn.appendChild(oLi);
+		}
+		var aDel = document.getElementsByClassName("del");
+		for(var i =0;i<aDel.length;i++){
+			aDel[i].onclick = function(){
+				lBtn.removeChild(this.parentNode);
+			}
+		}
+
+	</script>
+</body>
+</html>

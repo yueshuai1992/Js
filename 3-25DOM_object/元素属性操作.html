@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width:20px;
+			height:50px;
+			border:1px red dotted;
+		}
+	</style>
+</head>
+<body>
+	<input type="text"  id="tet">
+	<input type="button" id="bt" value="按钮">
+	<script>
+		var oText = document.getElementById("tet");
+		var oButt = document.getElementById("bt");
+		oButt.onclick = function(){
+			// oText.value="abc";
+			// oText["value"]="abc";
+			oText.setAttribute("value","nihao");
+		}
+	</script>
+</body>
+</html>

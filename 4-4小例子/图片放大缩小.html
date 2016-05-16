@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.pi{
+			display: block;
+			float:left;
+			width:200px;
+			height:200px;
+		}
+		#pic{
+			clear: both;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<img src="1.jpg" alt="" class="pi">
+	<img src="2.jpg" alt="" class="pi">
+	<img src="3.jpg" alt="" class="pi">
+	<img src="4.jpg" alt="" class="pi">
+	<img src="" alt="" id="pic">
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		var x = 0;
+		var y = 0;
+		$("body").mousemove(function(event){
+			x=event.pageX;
+			y=event.pageY;
+		})
+
+		$(".pi").mousemove(function(){
+			var i = $(this).index();
+			if(i==0){
+				$("#pic").attr("src","1.jpg");
+			}
+			if(i==1){
+				$("#pic").attr("src","2.jpg");
+			}
+			if(i==2){
+				$("#pic").attr("src","3.jpg");
+			}
+			if(i==3){
+				$("#pic").attr("src","4.jpg");
+			}
+			$("#pic").css("display","block")
+			$("#pic").css({"width":"500px","height":"500px"});
+			$("#pic").css({"position":"absolute","top":y-10,"left":x-10})
+			
+		})
+		$(".pi").mouseleave(function(){
+			$("#pic").css("display","none")
+		})
+	</script>
+</body>
+</html>

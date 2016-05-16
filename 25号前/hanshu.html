@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" class="tet1">
+	<input type="text" class="tet2">
+	<input type="text" class="tet3">
+	<span>=</span>
+	<input type="text" class="tet4">
+	<input type="button" class="but1" value="计算">
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		// $(".but1").click(function(){
+		// 	var a = Number($(".tet1").val());
+		// 	var c = Number($(".tet3").val());
+		// 	var b =	$(".tet2").val();
+		// 	var d = 0;
+		// 	switch(b){
+		// 		case"+":d=a+c;break;
+		// 		case"-":d=a-c;break;
+		// 		case"*":d=a*c;break;
+		// 		case"/":d=a/c;break;
+		// 	}
+		// 	$(".tet4").val(d);
+		// });
+		
+		
+		function sum(a,b,c){
+			var d =0 ;
+			switch(b){
+				case"+":d=a+c;break;
+				case"-":d=a-c;break;
+				case"*":d=a*c;break;
+				case"/":d=a/c;break;
+			}
+			return d;
+		}
+		// var a = 3
+		// var b ="+"
+		// var c =2
+		var a = Number($(".tet1").val(3));
+		var c = Number($(".tet3").val(2));
+		var b =	$(".tet2").val("+");
+		console.log(sum(a,b,c));
+		
+
+
+	</script>
+</body>
+</html>

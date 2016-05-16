@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0px;
+		padding:0px;
+	}
+	.box{
+		height:400px;
+		width:400px;
+		border:3px dotted yellow;
+		overflow:hidden;
+	}
+	.bigbox{
+		width:2000px;
+		height:400px;
+	}
+	.bigbox img{
+		display: block;
+		float: left;
+	}
+	ul{
+		position:absolute;
+		top:360px;
+		left:280px;
+	}
+	li{
+		width:20px;
+		height:20px;
+		border:red 1px dotted;
+		text-align: center;
+		line-height: 20px;
+		float: left;
+		list-style: none;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="bigbox">
+			<img src="1.jpg" alt=""	width=400px height=400px>
+			<img src="2.jpg" alt="" width=400px height=400px>
+			<img src="3.jpg" alt="" width=400px height=400px>
+			<img src="4.jpg" alt="" width=400px height=400px>
+			<img src="5.jpg" alt="" width=400px height=400px>
+		</div>
+	</div>
+	<div class="but">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	 <script type="text/javascript">
+		$(".but li").click(function(){
+			var a = $(this).index();
+			y=a+1;
+			$(this).css("background-color","red");
+			$(this).siblings().css("background-color","#fff");
+			var num = a*(-400);
+			$(".bigbox").animate({"margin-left":num},1000);
+		});
+		$(".but li").mouseenter(function(){
+			clearInterval(b);
+		})
+		$(".but li").mouseleave(function(){
+			b=setInterval(diao,1000);
+		})
+		var y=0;
+		function diao(){
+			$(this).css("background-color","red");
+			$(this).siblings().css("background-color","#fff");
+			var num = y*(-400);
+			$(".bigbox").animate({"margin-left":num},1000);
+			y++;
+			// y=y<=4?y=0;
+			if(y<=4){
+				y=y;
+			}else{
+				y=0;
+			}
+		}
+		var b=setInterval(diao,1000);
+	</script>
+</body>
+</html>

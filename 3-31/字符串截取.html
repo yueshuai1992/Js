@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// //数组获取其中元素
+	// 	var arr = [1,2,3,4,5,6];
+	// 	alert(arr.slice(3,6));
+
+	// // 字符串获取其中的长度
+	// var str = "123456789"
+	// alert(str.substring(6,9))//substring(开始，结束)索引重零开始
+	// var str = "123456789"
+	// alert(str.substr(6,3))//substr(开始，长度) 索引重零开始
+
+
+
+	// for(i=0, j=0; i<10, j<6; i++, j++){ 
+	// 	k = i + j; 
+	// 	console.log(i);
+	// 	console.log(j);
+	// }//10
+	// alert(k)
+
+	// var a=(); 报错
+	// var a=[]; 
+	// var a={}; 
+	// var a=//; 报错
+
+
+	// var n = 0.4,m = 0.3, i = 0.2, j = 0.1;
+	// alert(n-m);
+	// alert(i-j)
+	// alert((n - m) == (i - j)); //false
+	// alert((n-m) == 0.1); //false
+	// alert((i-j)==0.1); //true
+
+
+		// function foo(){
+  //   		foo.a = function(){alert(1)}; 
+  //   		console.log(foo.a);
+  //   		this.a = function(){alert(2)};
+  //   		a = function(){alert(3)};
+  //   		var a = function(){alert(4)};
+  //   		console.log(a)
+		// }; 
+		// foo.prototype.a = function(){alert(5)};
+		// foo.a = function(){alert(6)};
+
+		// // foo.a();
+		// var obj = new foo();
+		// obj.a(); 
+		// foo.a();
+
+
+		var a = 5; 
+		function test(){
+		    a = 0; 
+		    alert(a);
+			alert(this.a);
+		    var a; 
+		    alert(a)
+		}
+		test(); 
+
+		// var obj = {
+	 //        name: 'leipeng',
+	 //        showName: function(){
+	 //            alert(this.name);
+	 //        	}
+
+  //  		}
+		// obj.showName();//leipeng
+
+
+		// var reg = /^[a-zA-Z][a-zA-Z0-9_]{5,20}/
+  //           name1 = 'leipeng'
+  //           name2 = '0leipeng'
+  //           name3 = '你好leipeng'
+  //           name4 = 'hi'
+     
+  //       alert(reg.test(name1));
+  //       alert(reg.test(name2));
+  //       alert(reg.test(name3));
+  //       alert(reg.test(name4));
+
+	</script>
+	
+</body>
+</html>

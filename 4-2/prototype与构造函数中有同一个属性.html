@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function fun(s){
+			document.write(s+"<br/>");
+		}
+		//构造函数中与原型中有相同的属性是，构造函数属性会覆盖原型中的
+		//属性但是不会销毁原型属性，如果用delete运算符将删除构造函数中的
+		//属性，对象的原型属性恢复可见性
+
+		function Point(x,y){
+			if(x){
+				this.x = x;
+			}
+			if(y){
+				this.y = y;
+			}
+		}
+		Point.prototype.x=0;
+		Point.prototype.y=0;
+		var p1 = new Point;
+		var p2 = new Point(1,2);
+		//给fun传参
+		fun(p1.x+","+p1.y)//0  0
+		fun(p2.x+","+p2.y)//1  2
+	</script>
+</body>
+</html>

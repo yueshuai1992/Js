@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Father(){
+			this.Foo = function(){
+				return 10;
+			}
+			this.Bar = function(){
+				alert(this.Foo()+10)
+			}
+		}
+		function Son(){
+			this.Foo =function(){
+				return 20;
+			}
+		}
+		Son.prototype = new Father();
+		var s = new Son();//s为30；son是实例，对象是S,
+		// var s = new Father();//s为20；Father是实例，对象是S,
+		s.Bar();
+
+	</script>
+</body>
+</html>

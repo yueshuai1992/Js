@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		li{
+			width:30px;
+			height:30px;
+			border:1px red dotted;
+			float:left;
+			list-style: none;
+			line-height: 30px;
+			text-align: center;
+			cursor:pointer;
+		}
+		.bg-red{
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<img src="1.jpg" alt="" id="img" width="400px" height="400px">
+	<ul id="list">
+		<li class="num">1</li>
+		<li class="num">2</li>
+		<li class="num">3</li>
+		<li class="num">4</li>
+		<li class="num">5</li>
+	</ul>
+	<script>
+		var aPic = document.getElementById("img");
+		var imgArr=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg",];
+		var aLi = document.getElementsByClassName("num");
+		var aList = document.getElementById("list");
+		for(var i =0; i<aLi.length;i++){
+			aLi[i].onclick = function(){
+				var aIndex = index(this);
+				aPic.src=imgArr[aIndex];
+				addClass(this,"bg-red");
+				var sib = siblings(this);
+				for(var j=0;j<sib.length;j++){
+					removeClass(sib[j],"bg-red");
+				}
+			}
+		}
+		function index(node){
+			var arr = node.parentNode.children;
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]==node){
+					return i;
+				}
+			}
+		}
+		function addClass(node,classStyle){
+			var addStr = node.className+" "+classStyle;
+			node.className=addStr;
+		}
+		function siblings(node){
+			var arr = node.parentNode.children;
+			var newArr = [];
+			for(var i = 0;i<arr.length;i++){
+				if(arr[i]!=node){
+					newArr.push(arr[i]);
+				}
+			}
+			return newArr;
+		}
+		function removeClass(node,classStyle){
+			var arr = node.className.split(" ");//以空格的形式分隔成数组
+			var remArr = [];
+			if(arr[i]!=classStyle){
+				remArr.push(arr[i]);
+			}
+			var str = remArr.join(" ");//成空格的形式将数组转换成字符串
+			node.className=str;
+		}
+	</script>
+</body>
+</html>

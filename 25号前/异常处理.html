@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function fun(x,y,z){
+			if(fun.length!=arguments.length){
+				throw Error("请重新输入");
+			}
+			else{
+				document.write(x,y,z);
+			}
+		}
+		try{
+			fun(1,2,3);
+			// fun(1,2);//异常处理的时候，只要遇到第一个异常，该程序try剩余的调用将不会再执行。
+			// fun(1,2,3,5);
+		}
+		catch(ex){
+			document.write(ex.message);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function setName(obj){
+			obj.name="nihao";//就是person.name
+
+			obj = new Object();//就是在该区域新建了一个object，此时，person.name 是nihao；
+			//
+			obj.name="小明";//新建区域的obj.name 属性，值是“小明”
+
+
+			//与上两行代码相同
+			// obj={
+			// 	name:"小明",
+			// }
+
+			
+			
+		}
+		var person = new Object();
+		setName(person);
+		alert(person.obj(name))
+	</script>
+</body>
+</html>

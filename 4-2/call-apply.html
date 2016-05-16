@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Cat(){
+
+		}
+		Cat.prototype={
+			name:"猫猫",
+			food:"fish",
+			say:function(){
+				console.log(this.name+"爱吃"+this.food)
+			}
+		}
+		var cat = new Cat();
+		cat.say();
+
+
+		function Dog(){
+			food:"骨头"
+		}
+		// var dog = new Cat();
+
+		var Dog ={
+			name:"狗狗",
+			food:"骨头",
+		}
+		cat.say.call(Dog);
+		cat.say();
+
+		// dog.say.apply(Dog);
+		// dog.say();
+
+
+
+		// function print(a, b, c, d){
+		// 	alert(a + b + c + d);
+		// }
+		// function example(a, b , c , d){
+		// 	//用call方式借用print,参数显式打散传递
+		// 	print.call(this, a,c,b, d);
+		// 	//用apply方式借用print, 参数作为一个数组传递,
+		// 	//这里直接用JavaScript方法内本身有的arguments数组
+		// 	print.apply(this, arguments);
+		// 	//或者封装成数组
+		// 	print.apply(this, [a, b, c, d]);
+		// 	}
+		// 	//下面将显示”背光脚本”
+		// 	example("背" , "光", "脚","本");
+	</script>
+</body>
+</html>

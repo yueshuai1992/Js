@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作用域</title>
+</head>
+<body>
+	<script>
+		function randomfun(){
+			var x = Math.random();
+			return function(){
+				alert(x);
+			}
+				
+		}	
+		var a = randomfun();
+		var b = randomfun();
+		a();
+		b();
+		a = null
+	</script>
+	
+</body>
+</html>

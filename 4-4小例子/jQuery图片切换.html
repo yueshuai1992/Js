@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片切换jQuery</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		li{
+			width: 30px;
+			height: 30px;
+			float:left;
+			border:1px dotted red;
+			text-align: center;
+			line-height: 30px;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<img src="1.jpg" alt="" id="pic">
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		var arr = ["1.jpg","2.jpg","3.jpg","4.jpg"];
+		$("li").click(function(){
+			var x = $(this).index();
+			$("#pic").attr("src",arr[x]);
+		})
+	</script>
+</body>
+</html>

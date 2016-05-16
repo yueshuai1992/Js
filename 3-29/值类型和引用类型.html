@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//1与2相同
+		var vector = {
+			reverse :function(vector){
+				vector.x = -vector.x;
+				vector.y = -vector.y;
+				alert(vector.x);
+				alert(vector.y);
+			}
+		}
+		var v = {x:1,y:2};
+		vector.reverse(v);
+		
+		//2
+		var vector = {};
+		vector.reverse = function(vector){
+			vector.x = -vector.x;
+			vector.y = -vector.y;
+			alert(vector.x);
+			alert(vector.y);
+		};
+		var v = {x:1,y:2};
+		vector.reverse(v);
+
+	</script>
+</body>
+</html>

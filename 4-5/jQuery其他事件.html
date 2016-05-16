@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.bigBox{
+			width:200px;
+			height: 200px;
+			background-color: red;
+		}
+		.box{
+			width: 100px;
+			height:100px;
+			background-color: #ff0;
+			position: absolute;
+			top:100px;
+			left:100px;
+		}
+		.acitive{
+			border:10px dotted blue;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="tet" value="nihao">
+	<div class="bigBox">
+		<div class="box">
+			
+		</div>
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+	//载入事件
+		// $(window).load( function () { alert("Bye now!"); } );
+	//选中文本的时候（INput中）会触发事件
+		// $("#tet").select(function(){
+		// 	alert("请不要动我的文字！");
+		// });	
+	//窗口改变大小的时候触发
+		// $(window).resize(function(){
+  // 			alert("Stop it!");
+		// });
+	//change 当元素值发生改变的时候触发
+	// $("#tet").change(function(){
+	// 		alert("请不要改变我的文字！");
+	// 	});	
+	//focus 当元素获得焦点的时候触发事件
+	$("#tet").focus(function(){
+		alert("我获得焦点了谢谢！");
+	});	
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		div{
+			float: left;
+		}
+		p{
+			width:100px;
+			height: 20px;
+			background-color: red;
+			border:1px dotted yellow;
+			text-align: center;
+		}
+		ul{
+			background-color: yellow;
+		}
+		li{
+			list-style: none;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class = "box1">
+		<p>服装</p>
+		<ul>
+			<li>男装</li>
+			<li>女装</li>
+			<li>童装</li>
+			<li>老人装</li>
+		</ul>
+	</div>
+	<div class = "box2">
+		<p>服装</p>
+		<ul>
+			<li>男装</li>
+			<li>女装</li>
+			<li>童装</li>
+			<li>老人装</li>
+		</ul>
+	</div>
+	<div class = "box3">
+		<p>服装</p>
+		<ul>
+			<li>男装</li>
+			<li>女装</li>
+			<li>童装</li>
+			<li>老人装</li>
+		</ul>
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("ul").hide();
+		$(".box1 p").stop().mouseenter(function(){
+			$(".box1 ul").slideDown();
+		})
+		$(".box2 p").stop().mouseenter(function(){
+			$(".box2 ul").slideDown();
+		})
+		$(".box3 p").stop().mouseenter(function(){
+			$(".box3 ul").slideDown();
+		})
+		$(".box1 p").stop().mouseleave(function(){
+			$(".box1 ul").slideUp();
+		})
+		$(".box2 p").stop().mouseleave(function(){
+			$(".box2 ul").slideUp();
+		})
+		$(".box3 p").stop().mouseleave(function(){
+			$(".box3 ul").slideUp();
+		})
+	</script>
+</body>
+</html>

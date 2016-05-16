@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//当函数中是数组的时候，数组是引用类型，而原始类型与引用类型完全不一样
+		function ClassA(){
+			this.a=[];
+			// this.a=0;
+		}
+		function ClassB(){
+			this.b=function(){
+
+			}
+		}
+		ClassB.prototype = new ClassA();
+		var objB1=new ClassB();
+		var objB2=new ClassB();
+		objB1.a.push(1,2,3);
+		// objB1.a=7;
+		function conl(arr){
+			alert(arr);
+		}
+		conl(objB2.a);
+	</script>
+</body>
+</html>

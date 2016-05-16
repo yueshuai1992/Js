@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function dwn(s){
+			document.write(s+"<br/>")
+		};
+		function point(x,y){
+			this.x=x;
+			this.y=y;
+		};
+		var p1 = new point(1,2);
+		var p2 = new point(3,4);
+		point.prototype.z=0;
+		dwn(p1.z);
+		dwn(p2.z);
+	</script>
+</body>
+</html>

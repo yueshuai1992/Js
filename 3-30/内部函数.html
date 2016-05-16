@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function dwn(s){
+			document.write(s+"<br/>");
+		}
+		(function(){
+			var innerX = 10;
+			var innerY = 20;
+			outerObj ={
+				x:innerX,
+				y:innerY
+			}
+		})();
+		// dwn(innerX);
+		dwn(outerObj.x)
+	</script>
+</body>
+</html>

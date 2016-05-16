@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		a{
+			
+			background-color: red;
+		}
+	
+
+	</style>
+
+</head>
+<body>
+	<!-- <form action="">
+		<input type="text"value="nihao">
+		<input type="passward" value="hhhaha">
+		<input type="button" value = "iheifef">
+	</form> -->
+	
+		<a>我要居中</a>
+
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		// var map = $("input").map(function(){
+		// 	return $(this);
+		// }).toArray();
+		
+		// console.log(map);
+		// var arr = [1,2,3,4,5,6,7,8,9,10 ];
+		// arr = $.map(arr, function(n, i){
+		// 	return (n*n*n);
+		// });
+		// alert(arr);
+		
+		function position(){
+			var height = $("a").height();
+			var width = $("a").width();
+			var y = $(window).height();
+			var x = $(window).width();
+			var i = (y-height)/2;
+			var j = (x-width)/2;
+			$("a").css({"position":"fixed","top":i,"left":j})
+		};
+		$(window).resize(function(){
+			position();
+		});
+		$(window).ready(function(){
+			position();
+		})
+			
+		
+		
+		
+	</script>
+</body>
+</html>

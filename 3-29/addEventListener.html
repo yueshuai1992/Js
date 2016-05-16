@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		#bigbox{
+			width:400px;
+			height:400px;
+			background-color: red;
+		}
+		#midbox{
+			width:200px;
+			height:200px;
+			background-color: blue;
+		}
+		#smbox{
+			width:100px;
+			height:100px;
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="bigbox">
+		<div id="midbox">
+			<div id="smbox"></div>
+		</div>
+	</div>
+	<script>
+		var big = document.getElementById("bigbox");
+		var mid = document.getElementById("midbox");
+		var sm = document.getElementById("smbox");
+		// big.onclick = function(){
+		// 	console.log("我是红色");
+		// }
+		// mid.onclick = function(){
+		// 	console.log("我是蓝色");
+		// }
+		// sm.onclick = function(){
+		// 	console.log("我是黑色");
+		// }
+		big.addEventListener("click",function(event){
+			event.stopPropagation();
+			console.log("我是红色");
+		},false);
+		mid.addEventListener("click",function(){
+			console.log("我是蓝色");
+			event.stopPropagation();
+		},false);
+		sm.addEventListener("click",function(){
+			console.log("我是黑色");
+			event.stopPropagation();
+		},false);
+	</script>
+</body>
+</html>

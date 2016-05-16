@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function Cat(firstName){
+		this.name=firstName;
+		this.sayName1 = function(){
+			alert(this.name);
+		}
+
+	}
+	Cat.prototype = {
+		lastName:"蕾蕾",
+		sayName: function(){
+			console.log(this.name+this.lastName)
+		}
+	}
+	var cat = new Cat("秘密");
+	cat.sayName1()
+	cat.sayName()
+	</script>
+</body>
+</html>

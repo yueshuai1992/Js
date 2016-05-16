@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function dwn(s){
+			document.write(s+"<br>");
+		}
+		function myClass(){
+			var p = 100; //私有属性
+			this.x = 10;//动态共有属性
+		}
+		myClass.prototype.y=20;//原型
+		myClass.z=30;
+		var a = new myClass();//new 类实例化，创建类的实类化对象
+		dwn(a.p);
+		dwn(a.x);
+		dwn(a.y);
+		a.x=20;
+		a.y=40;
+		dwn(a.x);
+		dwn(a.y);
+		delete(a.x);
+		delete(a.y);
+		dwn(a.x);
+		dwn(a.y);
+		dwn(a.z);
+		dwn(myClass.z)
+
+
+		//undefined
+		// 10
+		// 20
+		// 20
+		// 40
+		// undefined
+		// 20
+		// undefined
+		// 30
+
+	</script>
+</body>
+</html>

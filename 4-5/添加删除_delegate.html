@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>delegate</title>
+</head>
+<body>
+	<input type="text" placeholder="请输入！" id="txt">
+	<input type="button" id="but" value="添加">
+	<ul id="list">
+		<li>苹果<span class="del">删除</span></li>
+		<li>鸭梨<span class="del">删除</span></li>
+		<li>香蕉<span class="del">删除</span></li>
+		<li>橘子<span class="del">删除</span></li>
+	</ul>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("#but").click(function(){
+			var str = $("#txt").val();
+			var $li = $("<li><span class='del'>删除</span></li>")
+			$("#list").append($li);
+			$li.prepend(str);
+		});
+		$("#list").delegate(".del","click",function(){
+			$(this).parent().remove();
+		})
+	</script>
+</body>
+</html>

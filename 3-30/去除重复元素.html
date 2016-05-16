@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	(function(){
+		var arr = [9,1,3,1,5,3,7,3,9,10];
+		var newArr= [];
+		var obj = {};
+		
+			function fun(){
+			for(var i = 0;i<arr.length;i++){
+				if(obj[arr[i]]==undefined){
+					obj[arr[i]]=true;
+					newArr.push(arr[i]);
+				}
+			}
+				return newArr;
+			
+			}
+			var x = fun()
+		 	alert(x)
+
+	})();
+		
+	</script>
+</body>
+</html>

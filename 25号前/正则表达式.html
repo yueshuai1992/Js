@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input class="txt1" type="text"><span>请输入用户名</span><br>
+	<input class="txt2" type="password"><span>请输入密码</span>
+	<script src = "jquery-1.11.1.js"></script>
+	<script>
+		// var reg = /^[a-zA-Z0-9]{0,12}\@qq\.com$/;
+		// 	$(".txt1").blur(function(){
+		// 		var text = $(this).val();
+		// 		var a = reg.test(text);
+		// 		alert(a);
+		// 	});
+		var date = "2016-3-22";
+		var reg = /^([0-9]{4})\-([0-9]{1,2})\-([0-9]{1,2})$/;
+		var x = reg.exec(date);
+		var year = x[1];
+		var month = x[2];
+		var day = x[3];
+		document.write("今天是"+year+"年"+month+"月"+day+"日")
+	</script>
+</body>
+</html>

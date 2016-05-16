@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width:20px;
+			height:50px;
+			border:1px red dotted;
+		}
+	</style>
+</head>
+<body>
+	
+	<ul id="ul1">
+		<li class="color1"></li>
+		<li></li>
+		<li class="color1"></li>
+		<li></li>
+		<li class="color1"></li>
+		<li></li>
+		<li class="color1"></li>
+		<li></li>
+	</ul>
+	<script>
+		function getByClass(allParent,aclass){
+			var result = [];
+			var eve = allParent.getElementsByTagName("*");
+			for(var j=0; j<eve.length; j++){
+				if(eve[j].className==aclass)
+				{
+					eve[j].style.background="blue"
+					result.push(eve[j]);
+				}
+			}
+			return result;
+		}
+		var oUl = document.getElementById("ul1");
+		
+		var box = getByClass(oUl,"color1");
+		for(var x=0;x<box.length;x++){
+			box[i].style.background="blue";
+		}
+		// for(var i=0;i<num.length;i++){
+		// 	if(num[i].className=="color1"){
+		// 		num[i].style.background="red";
+		// 	}
+		// }
+
+	</script>
+</body>
+</html>

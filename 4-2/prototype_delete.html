@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function ClassA(){
+			this.a = 100;
+			this.b = 200;
+			this.c = 300;
+		};
+		//将ClassA的属性a,b,c复制到ClassA的原型中
+		ClassA.prototype = new ClassA();
+		//删除ClassA中非原型及非构造函数中属性
+		ClassA.prototype.reset = function(){
+
+			for (var i in this){
+				delete this[i];
+			}
+
+		};
+		var classA = new ClassA();//实例化必须在原型之后实例，否则用不了。
+		function dwn(x)
+		{
+			console.log(x)
+		};
+		dwn(classA.a)
+		classA.a*=2;
+		classA.b*=2;
+		classA.c*=2;
+		dwn(classA.a);
+		dwn(classA.b);
+		dwn(classA.c);
+		classA.reset();//调用classA.reset()方法
+		dwn(classA.a);
+		dwn(classA.b);
+		dwn(classA.c);
+
+	</script>
+</body>
+</html>

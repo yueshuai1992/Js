@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.box{
+			width:100px;
+			height: 30px;
+			float:left;
+			background-color: red;
+			border:1px dotted #fff;
+			overflow: hidden;
+		}
+		.box1_top,.box2_top,.box3_top{
+			width:100px;
+			height: 30px;
+			background-color: #cccccc;
+			text-align: center;
+			line-height: 30px;
+		}
+		.box1_bottom,.box2_bottom,.box3_bottom{
+			width:100px;
+			height: 30px;
+			background-color: red;
+			text-align: center;
+			line-height: 30px;
+			color:yellow;
+		}
+
+	</style>
+</head>
+<body>
+	<div class= "box">
+		<div class="box1_top"><span>电影</span></div>
+		<div class="box1_bottom"><span>电影</span></div>
+	</div>
+	<div class= "box">
+		<div  class="box2_top"><span>电视剧</span></div>
+		<div class="box2_bottom"><span>电视剧</span></div>
+	</div>
+	<div class= "box">
+		<div  class="box3_top"><span>综艺节目</span></div>
+		<div class="box2_bottom"><span>综艺节目</span></div>
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(".box").mouseenter(function(){
+			var x =$(this).index()
+			if(x==0){
+				$(".box1_top").stop().animate({marginTop:-30},1000);
+			}
+			if(x==1){
+				$(".box2_top").stop().animate({marginTop:-30},1000);
+			} 
+			if(x==2){
+				$(".box3_top").stop().animate({marginTop:-30},1000);
+			} 
+		})
+		$(".box").mouseleave(function(){
+			var x =$(this).index()
+			if(x==0){
+				$(".box1_top").stop().animate({marginTop:0},1000);
+			}
+			if(x==1){
+				$(".box2_top").stop().animate({marginTop:0},1000);
+			} 
+			if(x==2){
+				$(".box3_top").stop().animate({marginTop:0},1000);
+			} 
+		})
+	
+	</script>
+</body>
+</html>

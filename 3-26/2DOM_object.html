@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style></style>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="1" class="num">
+	<input type="button" value="2" class="num">
+	<input type="button" value="3" class="num">
+	<script>
+		var oTxt = document.getElementById("txt");
+		var oBut = document.getElementsByClassName("num");
+		var oNum = document.getElementsByTagName("input");
+		for(var i = 0;i<oNum.length;i++){
+			oNum[i].onclick = function(){
+				oTxt.value = this.value;
+			}
+		}
+	</script>
+
+</body>
+</html>

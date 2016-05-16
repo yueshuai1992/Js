@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+</head>
+<body>
+	<script>
+		function Point(x,y){
+			this.x=x;
+			this.y=y;
+		}
+		Point.add =function(p){
+			return new Point(this.x+p.x,this.y+p.y);
+		}
+		alert(Point(3,4));
+	</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		#header{
+			height:400px;
+			background-color: red;
+		}
+		ul{
+			position: fixed;
+			top:0;
+		}
+		li{
+			float:left;
+			width:60px;
+			height: 25px;
+			border: 1px dotted blue;
+			list-style:none;
+			text-align: center;
+			line-height: 30px;
+		}
+		li a{
+			text-decoration: none;
+			color:#000;
+		}
+		#banner{
+			height:400px;
+			background-color: #cccccc;
+		}
+		#bottom{
+			height:500px;
+			background-color: #ffcccc;
+		}
+		#footer{
+			height:400px;
+			background-color: #ccffcc;
+		}
+		#footer img{
+			position: fixed;
+			right:20px;
+			bottom: 50px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<ul id="list">
+			<li><a href="#header">新闻</a></li>
+			<li><a href="#banner">地图</a></li>
+			<li><a href="#bottom">视频</a></li>
+			<li><a href="#footer">贴吧</a></li>
+		</ul>
+	</div>
+	<div id="banner"></div>
+	<div id="bottom"></div>
+	<div id="footer">
+		<img src="1.png" alt="" width=100px height=90px>
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(window).scroll(function(){
+			var x = $(window).scrollTop();
+			if(x>50){
+				$("img").css("display","block");
+			}
+			else{
+				$("img").css("display","none");
+			}
+		})
+		$("#footer img").click(function(){
+			$("html,body").animate({scrollTop:0},2000)
+			// $(window).scrollTop(0);
+		})
+		$("li").click(function(){
+			var href = $(this).children().attr("href");
+			var offset = $(href).offset().top;
+			$("html,body").animate({scrollTop:offset},2000);
+			return false
+		})
+
+	</script>
+</body>
+</html>

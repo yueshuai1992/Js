@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.bigBox{
+			width:200px;
+			height: 200px;
+			background-color: red;
+		}
+		.box{
+			width: 100px;
+			height:100px;
+			background-color: #ff0;
+			position: absolute;
+			top:100px;
+			left:100px;
+		}
+		.acitive{
+			border:10px dotted blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="bigBox">
+		<div class="box">
+			
+		</div>
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+//当挪到大盒子上只是触发自己的
+		// $(".bigBox").mouseover(function(){
+		// 	console.log("我是大盒子！");
+		// });
+//当挪到小盒子上不仅触发自己的，还触发大盒子的。
+		// $(".box").mouseover(function(){
+		// 	console.log("我是小盒子！");
+		// });
+//当鼠标移出的时候触发自己的事件
+		// $(".bigBox").mouseout(function(){
+		// 	console.log("我是大盒子！");
+		// });
+//当鼠标移出的时候触发自己的，还有大盒子的事件事件
+		// $(".box").mouseout(function(){
+		// 	console.log("我是小盒子！");
+		// });
+
+
+		$(".bigBox").mouseenter(function(){
+			console.log("我是大盒子！");
+		});
+		
+	</script>
+</body>
+</html>

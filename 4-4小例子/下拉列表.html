@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		
+		p{
+			float: left;
+			width:100px;
+			height: 20px;
+			background-color: #fff;
+			border:1px dotted yellow;
+			text-align: center;
+		}
+		.box{
+			width:306px;
+			height: 300px;
+			background-color: #fff;
+			/*border:1px dotted yellow;*/
+		}
+		
+	</style>
+</head>
+<body>
+	<p class="p1">女装</p>
+	
+	<p class="p2">男装</p>
+	
+	<p class="p3">童装</p>
+	<div class = "box">
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(".p1").click(function(){
+			$(this).css("background-color","red")
+			$(this).siblings().css("background-color","#fff");
+			$(".box").css("background-color","red")
+		})
+		$(".p2").click(function(){
+			$(this).css("background-color","blue")
+			$(this).siblings().css("background-color","#fff");
+			$(".box").css("background-color","blue")
+		})
+		$(".p3").click(function(){
+			$(this).css("background-color","yellow")
+			$(this).siblings().css("background-color","#fff");
+			$(".box").css("background-color","yellow")
+		})
+	</script>
+</body>
+</html>

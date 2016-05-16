@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.bigbox{
+			width:200px;
+			height: 200px;
+			background-color: red;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+		.acitive{
+			border:5px dotted yellow;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>苹果</li>
+		<li>大鸭梨</li>
+		<li>哈哈</li>
+		<li>哈咪猫</li>
+	</ul>
+	
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		// $("#list li").each(function(index,element){
+		// 	console.log(index);
+		// 	console.log(element);
+		// })
+		var  $obj = {
+			name:"xiaoming",
+			age:23,
+			sayname:function(){
+				console.log("nihao")
+			}
+		};
+		$.each($obj,function(index,element){
+			console.log(index);
+			console.log(element);
+		})
+
+		// for(var i in $obj){
+		// 	console.log(i);
+		// 	console.log($obj[i])
+		// }
+	</script>
+</body>
+</html>

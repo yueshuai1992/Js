@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="抽奖" id="but">
+	
+	<script>
+		var arr = ["小明","小黑","小兰","小白","小绿"];
+		var but = document.getElementById('but');
+		var obj ={};
+		
+
+		function fun(){
+			var num = Math.floor(Math.random()*arr.length);
+			if(obj[arr[num]]==undefined){
+				
+				obj[arr[num]]=1;
+				console.log(arr[num]);
+				
+			}else{
+				fun();
+			}
+		}
+		but.onclick = function(){
+			fun();
+		}
+	</script>
+</body>
+</html>

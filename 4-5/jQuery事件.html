@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+</head>
+<body>
+	<input type="text" id="txt"  placeholder="请添加！">
+	<input type="button" id="but" value="添加">
+	<input type="button" id="tet" value="test">
+	<input type="button" id="one" value="one">
+	<ul id="list">
+		<li>水蜜桃 <span class="del">删除</span></li>
+		<li>大鸭梨 <span class="del">删除</span></li>
+		<li>哈密瓜 <span class="del">删除</span></li>
+		<li>红苹果 <span class="del">删除</span></li>
+	</ul>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("#but").click(function(){
+			var val = $("#txt").val();
+			var $li = $("<li><span class=\'del\'>删除</span></li>");
+			$li.prepend(val);
+			$("#list").append($li);
+
+		});
+		$("#list").delegate(".del","click",function(){
+			$(this).parent().remove();
+		})
+		$("#tet").bind("click",function(){
+			console.log("test")
+		})
+		$("#one").one("click",function(){
+			console.log("我只是触发一次！")
+		})
+	</script>
+</body>
+</html>

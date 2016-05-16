@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+	//函数调用具有覆盖
+	function t1(){
+		document.write("你好");
+	}
+	t1();
+	function t1(){
+		document.write("new你好");
+	}
+	t1();
+	//以下t1是函数function（）{}的整个函数
+	var t1 = function(){
+		document.write("newnew你好");
+	}
+	t1();
+	function add(a,b){
+		return a+b;
+	}
+	alert(add(add(3,4),add(1,2)));
+	</script>
+</body>
+</html>

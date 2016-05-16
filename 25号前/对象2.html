@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// function fun()
+		// {
+		// 	this.name="小明";
+		// 	this.age=23;
+		// 	this.doAction=function(){
+		// 		alert("你好");
+		// 	}
+		// }
+		// var sold = new fun();
+		// sold.doAction();
+		function fun()
+		{
+			fun.name="小明";
+			fun.age=23;
+			this.doAction=function(){
+				alert("你好");
+			}
+		}
+		fun();
+		fun.doAction()
+		// var sold = new fun();
+		// // sold.doAction();
+		// var sold1 = new fun();
+		// // sold1.doAction();
+	</script>
+</body>
+</html>

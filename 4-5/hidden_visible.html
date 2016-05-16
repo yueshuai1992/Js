@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width:100px;
+			height: 100px;
+			background-color: red;
+			overflow: hidden;
+			
+		}
+		.sbox1{
+			width: 70px;
+			height: 70px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="sbox1"></div>
+		<div class="sbox1"></div>
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(".box").mouseover(function(){
+			$(this).css("overflow","visible");
+		})
+	</script>
+</body>
+</html>

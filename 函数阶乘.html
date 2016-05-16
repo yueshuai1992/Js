@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+	//阶乘n=nX(n-1)(n-2)(n-3)(n-4)……………………X1；
+	// function factorial(num){
+	// 	if(num<=0||num!=Math.round(num))
+	// 		return "数字不对";
+	// 	else if(num == 1)
+	// 		return 1;
+	// 	else
+	// 		return num*factorial(num-1);
+	// }
+	// var y = factorial(8);
+	// alert(y);
+		
+		function fun(num){
+			if(num==1||num!=Math.round(num))
+			{
+				return 1;
+			}
+			else 
+			{
+				return num*fun(num-1);
+			}
+		}
+
+		alert(fun(5))
+	</script>
+</body>
+</html>

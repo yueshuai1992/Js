@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function List(){
+			var m_elements = [];
+			//用apply方法借用
+			//m_elements,具备数组属性
+			m_elements = Array.apply(m_elements,arguments);
+			this.length = {
+				valueOf:function(){
+					return m_elements.length;
+				},
+				toString:function(){
+					return m_elements.length;
+				},
+			};
+			this.toString=function(){
+				return m_elements.toString();
+			}
+			this.add = function(){
+				m_elements.push.apply(m_elements,arguments)
+			}
+		}
+		var alist = new List(1,2,3)
+		alert(alist);//1,2,3
+		alert(alist.length);//3
+		alist.add(4,5,6)
+		alert(alist);//1,2,3,4,5,6
+		alert(alist.length);//6
+	</script>
+</body>
+</html>

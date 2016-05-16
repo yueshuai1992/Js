@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>岳帅</title>
+	<link rel="Shortcut Icon" href="1.png">
+	
+</head>
+<body>
+	
+	<script src="jquery-1.11.1.js"></script>
+	 <script type="text/javascript">
+	 //获取今天时间
+	 var today = new Date();
+	 alert(today);
+	 //获取年
+	 var year = today.getFullYear();
+	 alert(year+"年")
+	 //获取月月是从0开始所以获取当月的时候要+1
+	 var month = today.getMonth()+1;
+	 alert(month+"月");
+	 //获取天
+	 var day = today.getDate();
+	 alert(day);
+	 //获取星期
+	 var week = today.getDay();
+	 alert(week);
+	 //获取小时
+	 var hours = today.getHours();
+	 alert(hours);
+	 //获取分钟
+	 var minutes = today.getMinutes();
+	 alert(minutes);
+	 //获取秒
+	 var seconds = today.getSeconds();
+	 alert(seconds);
+	 //获取毫秒
+	 var milliseconds = today.getMilliseconds();
+	 alert(milliseconds);
+	</script>
+</body>
+</html>

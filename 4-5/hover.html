@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.bigbox{
+			width:200px;
+			height: 200px;
+			background-color: red;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+		.acitive{
+			border:5px dotted yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="bigbox">
+		<div class="box"></div>
+	</div>
+	
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		// $(".bigbox").hover(
+		// 	function(){
+		// 		$(this).addClass("acitive");
+		// 	},
+		// 	function(){
+		// 		$(this).removeClass("acitive");
+		// 	}
+		// )
+
+		$(".bigbox").hover(
+			function(){
+				$(this).toggleClass("acitive");
+			}
+		)
+	</script>
+</body>
+</html>

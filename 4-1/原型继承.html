@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Cat(){
+			this.firstName="小明";
+		}
+		Cat.prototype={
+			age:20,
+			sayName:function(){
+				console.log(this.firstName);
+				console.log(this.age);
+			}
+		}
+		var cat = new Cat();
+		function Son(){
+			this.firstName="小明明";
+			this.play = function(){
+				console.log("打游戏")
+			}
+		}
+		
+
+
+		Son.prototype = new Cat();
+		// Son.prototype.play = function(){
+		// 	console.log("打游戏")
+		// }
+		var son = new Son();
+		son.sayName();
+		son.play();
+		</script>
+</body>
+</html>

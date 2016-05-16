@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="but" value="addNode">
+	<ul id="list">
+		<li>海洋之心<span class="del">删除</span></li>
+		<li>纷纷而非法<span class="del">删除</span></li>
+		<li>儿飞飞<span class="del">删除</span></li>
+		<li>儿飞飞发<span class="del">删除</span></li>
+	</ul>
+	<script>
+		var aTxt=document.getElementById("txt");
+		var aBut=document.getElementById("but");
+		var alist=document.getElementById("list");
+		var ali=document.getElementsByTagName("li");
+		aBut.onclick = function(){
+			var val = aTxt.value;
+			alert(val);
+			var oLi=document.createElement("li");
+			var oVal=document.createTextNode(val);
+			alist.appendChild(oLi);
+			oLi.appendChild(oVal);
+
+		}
+		var aDel = document.getElementsByClassName("del");
+		for(var y=0;y<aDel.length;y++){
+			aDel[y].onclick = function(){
+				alist.removeChild(this.parentNode);
+			}
+		}
+	</script>
+</body>
+</html>

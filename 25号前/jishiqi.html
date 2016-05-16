@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span class="sp1"></span>:
+	<span class="sp2"></span>:
+	<span class="sp3"></span>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+	var time;
+	setInterval(function(){
+		var today = new Date();
+		var h = today.getHours(); 
+		var m = today.getMinutes(); 
+		var s = today.getSeconds(); 
+		
+		$(".sp1").text(h);
+		$(".sp2").text(m);
+		$(".sp3").text(s);
+		
+	},1000)
+		
+		// t=setTimeout('startTime()',500)
+		// }
+
+		// function checkTime(i)
+		// {
+		// if (i<10) 
+		//   {i="0" + i}
+		//   return i
+		// }
+
+		// alert(h);
+		// alert(m);
+		// alert(s);
+	</script>
+</body>
+</html>

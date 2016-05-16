@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//字符串类型强制转换
+		var str = "100";
+		alert(Number(str));//数值型100
+		alert(Boolean(str));//布尔true
+		alert(Object(str));//对象“100”
+		alert(Function(str));//function anonymouse(){100}
+
+		//数值类型强制转换
+		var num = 100;
+		alert(String(num));//字符串"100"
+		alert(Boolean(num))//布尔型true
+		alert(Object(num));//对象100
+
+		//对像类型强制转换
+		var obj = {}
+		alert(String(obj));//强转换为字符串[object Object]
+		alert(Number(obj));//强转换为数值NaN
+		alert(Boolean(obj));//强转换为布尔true
+
+		//布尔类型转换强制转换
+		var bool = true;
+		alert(String(bool));//字符串类型"true"
+		alert(Number(bool));//数值类型1
+		alert(Object(bool));//对象true
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="append" value="在子集后边加">
+	<input type="button" id="prepend" value="在子集前边加">
+	<input type="button" id="before" value="元素前添加哥哥">
+	<input type="button" id="after" value="元素后添加弟弟">
+	<input type="button" id="replaceWith" value="替换自己">
+	<ul>
+		<li class="list">大鸭梨</li>
+		<li>水蜜桃</li>
+	</ul>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("#append").click(function(){
+			var str  = $("#txt").val();
+			$("ul").append("<li>"+str+"</li>");
+		});
+		$("#prepend").click(function(){
+			var str  = $("#txt").val();
+			$("ul").prepend("<li>"+str+"</li>");
+		});
+		$("#before").click(function(){
+			var str  = $("#txt").val();
+			$(".list").before("<li>"+str+"</li>");
+		});
+		$("#after").click(function(){
+			var str  = $("#txt").val();
+			$(".list").after("<li>"+str+"</li>");
+		});
+		$("#replaceWith").click(function(){
+			var str  = $("#txt").val();
+			$(".list").replaceWith("<li>"+str+"</li>");
+		});
+
+
+	</script>		
+</body>
+</html>

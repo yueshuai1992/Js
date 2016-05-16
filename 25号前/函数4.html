@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <input type="text"  class="num1">
+	<input type="button" class="but" value="3次方">
+	<input type="text" class="club"> -->
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		function dog(){
+			var num = arguments[0];//获取dog函数中的第一个元素
+			document.write(num);
+			var leng = arguments.length;//获取该函数的长度用arguments的属性length
+			alert(leng);
+			//用arguments获取该函数中的每一个实参数
+			document.write("<br/>"+"我是"+arguments[0]+"今年"+arguments[1]+"岁外表"+arguments[2]);
+
+		}
+		dog("小黑",2,"黑色");
+	</script>
+</body>
+</html>

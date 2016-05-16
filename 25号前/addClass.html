@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.green{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		var span = $("<span></span>");
+		
+		span.addClass("green");
+		span.text("nihao");
+		$("body").append(span);
+	</script>
+</body>
+</html>

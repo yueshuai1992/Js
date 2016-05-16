@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		.num{
+			width:30px;
+			height:30px;
+			border:1px red dotted;
+			float:left;
+			list-style: none;
+			line-height: 30px;
+			text-align: center;
+			cursor:pointer;
+		}
+		.bg-red{
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<img src="1.jpg" alt="" id="img" width="400px" height="400px">
+	<ul id="list">
+		<li class="num">1</li>
+		<li class="num">2</li>
+		<li class="num">3</li>
+		<li class="num">4</li>
+		<li class="num">5</li>
+	</ul>
+	<script>
+		var oImg = document.getElementById("img");//获取img的id
+		var oList = document.getElementById("list");//获取list的id
+		var aNum = document.getElementsByClassName("num");//获取aNum的Class
+		var oPic = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"];//创建图片路径地址
+		//获取索引、调用函数
+		for(var i =0;i<aNum.length;i++){
+			aNum[i].onclick = function(){
+				var ind = index(this);//调用index函数
+				oImg.src = oPic[ind];//改变图片的src属性；同时获取图片索引
+				addClass(this,"bg-red");//改变属性传值
+				var sib = siblings(this);//调用sibling函数，返回值
+				for(var j = 0; j < sib.length; j++){
+					removeClass(sib[j],"bg-red");
+				}
+			}
+		}
+		//索引函数
+		function index(node){
+			var arr = node.parentNode.children;
+			for(var i = 0; i < arr.length; i++)
+			{
+				if(arr[i] == node)
+				{
+					return i;
+				}
+			}
+		}
+		//改变Class
+		function addClass(node,newStyle){
+			node.className = node.className + " " + newStyle;
+		}
+		//删除颜色属性
+		function removeClass(node,newStyle){
+			var nArr = node.className.split(" ");
+			var newArr = [];
+			for(var i = 0; i < nArr.length; i++)
+			{
+				if(nArr[i] != newStyle)
+				{
+					newArr.push(nArr[i]);
+				}
+			}
+			var str = newArr.join(" ");
+			node.className = str;
+		}
+		//改变
+		function siblings(node){
+			var arr = node.parentNode.children;
+			var newArr = [];
+			for(var i = 0; i < arr.length; i++){
+				if(arr[i] != node)
+				{
+					newArr.push(arr[i]);
+				}
+			}
+			return newArr;
+		}
+	</script>
+</body>
+</html>

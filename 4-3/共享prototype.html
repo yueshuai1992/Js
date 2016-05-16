@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function abPrototype()
+		{
+			this.a=null;
+			this.b=null;
+			this.add=function()
+			{
+				return this.a+this.b;
+			}
+		};
+		function strCls(a,b)
+		{
+			this.a = a;
+			this.b = b;
+		};
+		//strCls同时也具备了abPrototype中的add方法
+		strCls.prototype = new abPrototype();
+		var numCls = function(a,b)
+		{
+			this.a=a;
+			this.b=b;
+		};
+		//numCls同时也具备了abPrototype中的add方法
+		numCls.prototype = new abPrototype();
+		var strcls = new strCls(1,2);
+		var numcls = new numCls("a","b")
+		alert(strcls.add());
+		alert(numcls.add());
+
+	</script>
+</body>
+</html>

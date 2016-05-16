@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var a = "123456789";
+		var sp = a.split("");
+		var rev = sp.reverse();
+		var jo = rev.join("");
+		alert(jo);
+		function outer(){
+    		var num = 1;
+    		function inner(){
+        		var n = 2;
+       			 alert(n + num);
+    		}
+  		 return inner;
+		}
+		outer()();
+
+	</script>
+</body>
+</html>

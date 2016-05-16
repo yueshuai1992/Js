@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Point1D(x,y){
+			this.x=888;
+			this.y=y;
+		}
+		Point1D.prototype.x=11;
+		Point1D.prototype.y=0;
+		Point2D.prototype = new Point1D();
+		function Point2D(x,y){
+			this.x=2;
+			this.y=y;
+		}
+		Point2D.prototype.x=22;
+		Point2D.prototype.y=2;
+		function Point3D(x,y,c){
+			this.x=x;
+			this.y=y;
+		};
+		//point3D以point2D为对象原型。
+		Point3D.prototype = new Point2D();
+		//Point3D原型中的X和Y其实是Point2D中的；
+		Point3D.prototype.x=3;
+		Point3D.prototype.y=3;
+		var cp = new Point3D(10,20,"red");
+		function dwn(vl){
+			console.log(vl);
+		}
+		dwn(cp.x);//该X为Point3D中的X所以为10
+		delete cp.x;//删除cp对象中的X属性
+		dwn(cp.x);//该X为Point3D原型中的X；1
+		delete Point3D.prototype.x;//删除Point3D原型中的X属性
+		dwn(cp.x);//由于point3D以Point2D为对象原型，所以该X 为point2D对象中的x
+		delete Point2D.prototype.x;
+		dwn(cp.x);
+
+	</script>
+</body>
+</html>

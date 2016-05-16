@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		var arr = [5,9,8,7,54,4];
+		arr.push(5);//在数组的尾部插入一个数字
+		document.write(arr);
+		document.write("在尾部插入一个数字\n");
+		arr.pop(5);//在数组的尾部删除一个数字
+		document.writeln(arr);
+		document.write("在尾部删除一个数字");
+		arr.unshift(100);//在数组的开头插入一个数字
+		alert(arr);
+		arr.shift(100);//在数组的开头删除一个数字
+		alert(arr);
+		var lang = arr.length; //提取arr的长度
+		alert(lang);
+		var number = arr[2];//利用数组的下标来获取元素（重0开始获取）
+		alert(number);
+		//数组顺序升序
+		alert(arr.sort());
+		//数组顺序降序
+		alert(arr.reverse());
+		//数组转换为字符串
+		alert(arr.join(","));
+		//字符串转换为数组,在字符串转换为数组的时候，空格无论多少位置在哪都算长度。
+		var ar = "i e  ";
+		var a = ar.split(",");
+		alert(ar.length);
+		//字符串转数字
+		var b = "123";
+		var c = parseInt(b);
+		alert(c);
+	</script>
+</body>
+</html>

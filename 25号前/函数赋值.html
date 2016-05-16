@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+	function getCube(num1){
+		return num1*num1*num1;
+	}
+	var a = getCube;//打印的是整个函数的地址
+	var b = getCube(20);//正常调用
+	alert(a);
+	alert(b);
+		
+	</script>
+</body>
+</html>

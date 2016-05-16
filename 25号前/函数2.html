@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text"  class="num1">
+	<input type="button" class="but" value="3次方">
+	<input type="text" class="club">
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		function getClubName(num1){
+			return num1*num1*num1;
+		}
+		document.write("<br/>"+"3的3次方是"+getClubName(3));
+		$(".but").click(function(){
+			var x = $(".num1").val();
+			var y =getClubName(x); 
+			$(".club").val(y);
+		})
+	</script>
+</body>
+</html>

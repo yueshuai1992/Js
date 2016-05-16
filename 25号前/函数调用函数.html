@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+	function fun(num){
+		document.write(num+"<br/>");
+	}
+	function num(x,y){
+		if(!y) y=30;
+		return x+y;
+	}
+	fun(num(10));
+	fun(num(10,20));
+	</script>
+</body>
+</html>

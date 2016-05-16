@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function fun(){
+			if(arguments.length==1){
+				// return arguments[0]*arguments[0];
+				return Math.pow(arguments[0],2)
+			}
+			else if(arguments.length==2){
+				return arguments[1]*arguments[0];
+			}
+			else{
+				return "请输入正确内容！"
+			}
+
+		}
+		alert(fun(7,8,9));
+	</script>
+</body>
+</html>

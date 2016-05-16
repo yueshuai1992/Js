@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="#name">
+		<input type="text" id="text" >
+		<input type="button" class="num" value="1">
+		<input type="button" class="num" value="2">
+		<input type="button" class="num" value="3">
+	</div>
+	<script>
+		// var oBtn =  document.getElementById("btn")
+		// oBtn.onclick = function(){
+		// 	alert("你好");
+		// }
+		// var aBtn = document.getElementsByClassName("num");
+		// for(var i=0;i<aBtn.length;i++){
+		// 	aBtn[i].onclick = function(){
+		// 	alert(this.value);
+		// 	}
+		// }
+		// var eBtn = document.getElementsByTagName("input");
+		// console.log(eBtn);
+		var oBtn = document.getElementById("text");
+		var aBtn = document.getElementsByClassName("num");
+		
+		for(var i =0; i<aBtn.length; i++){
+			aBtn[i].onclick = function(){
+				// console.log(this.value);
+				oBtn.value = this.value;
+			}
+				
+		}
+	</script>
+</body>
+</html>

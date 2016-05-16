@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="抽奖" id="but">
+	<input type="button" value="重新开始" id="but2">
+	<script>
+		var arr = ["小明","小黑","小兰","小白","小绿"]
+		var but = document.getElementById('but');
+		var newArr = [];
+		for(var i = 0;i<arr.length;i++){
+			newArr[i]=arr[i];
+		}
+		
+		function fun(){
+			
+			var num = Math.floor(Math.random()*newArr.length)
+			
+			
+			if(newArr[num]==null){
+				fun()
+			}
+			else{
+				console.log(newArr[num]);
+				
+				newArr[num]=null;
+			}
+		}
+		var x =0;
+		but.onclick = function(){
+			
+				
+
+				if(x<newArr.length){
+					fun();
+					
+				}
+				else{
+					alert("抽奖完毕")
+					x=-1;
+				}
+				// else{
+					
+					
+				// }
+				x++;
+		}
+		but2.onclick = function(){
+			for(var i = 0;i<arr.length;i++){
+				newArr.pop();
+			}
+			for(var i = 0;i<arr.length;i++){
+				newArr[i]=arr[i];
+			}
+		}
+	</script>
+</body>
+</html>

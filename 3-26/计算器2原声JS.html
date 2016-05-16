@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	input{
+		width:30px;
+		height:30px;
+	}
+	#tet{
+		width:300px;
+		height:50px;
+	}
+	</style>
+</head>
+<body>
+	<input id="tet" type="text"><br>
+	<input type="button" class="number" value="1">
+	<input type="button" class="number" value="2">
+	<input type="button" class="number" value="3">
+	<input type="button" class="number" value="4">
+	<input type="button" class="number" value="5">
+	<input type="button" class="number" value="6">
+	<input type="button" class="number" value="7">
+	<input type="button" class="number" value="8"><br>
+	<input type="button" class="number" value="9">
+	<input type="button" class="number" value="0">
+	<input type="button" class="sign" value="+">
+	<input type="button" class="sign" value="-">
+	<input type="button" class="sign" value="*">
+	<input type="button" class="sign" value="/">
+	<input type="button" class="number" value=".">
+	<input type="button" id="result" value="=">
+	<input type="button" id="clear" value="C">
+	<script>
+		var aText= document.getElementById("tet");
+		var aBut = document.getElementsByClassName("number");
+		var numString = "";
+		var num1=0;
+		var num2=0;
+		for(var i = 0;i<aBut.length;i++){
+			aBut[i].onclick=function(){
+				numString+=this.value;
+				aText.value=numString;
+			}
+			
+		}
+		var vSign ="";
+		var aSign = document.getElementsByClassName("sign");
+		for(var j = 0;j<aSign.length;j++){
+			aSign[j].onclick=function(){
+				num1=Number(numString);
+				vSign=this.value;
+				numString="";
+				// alert(aResult);
+			}
+		}
+		var nResult=0;
+		var aResult = document.getElementById("result");
+		aResult.onclick = function(){
+			num2=Number(numString);
+			switch(vSign){
+					case "+":nResult = num1+num2;break;
+					case "-":nResult = num1-num2;break;
+					case "*":nResult = num1*num2;break;
+					case "/":nResult = num1/num2;break;
+			}
+			aText.value=nResult;
+		}
+		var aClear = document.getElementById("clear");
+		aClear.onclick=function(){
+			numString = ""
+			num1=0;
+			num2=0;
+			aText.value="";
+			vSign ="";
+			nResult=0;
+
+		}
+		
+	</script>
+</body>
+</html>

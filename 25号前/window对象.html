@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	span{
+		color:green;
+	}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>苹果 <span>删除</span><a>添加</a></li>
+		<li>香蕉 <span>删除</span><a>添加</a></li>
+		<li>水蜜桃<span>删除</span><a>添加</a></li>
+		<li>大鸭梨<span>删除</span><a>添加</a></li>
+	</ul>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("span").click(function(){
+			var result = confirm("是否删除？");
+			if(result){
+				$("span").parent().remove();
+			}
+		});
+		$("a").click(function(){
+			var result2 = prompt();
+			if(result2==null){
+				alert("请重新输入");
+			}
+			var b =  "<li>"+result2+"</li>" ;
+			$("ul").append(b);
+		});
+	</script>
+</body>
+</html>

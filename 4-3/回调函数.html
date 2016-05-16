@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li class="ali">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<script>
+		function Cat(){
+			this.name ="xiaoming";
+		}
+		var cat = new Cat();
+		cat.age=23;
+		cat.sayname=function(){
+			console.log(this.name)
+		}
+		cat.sayname();
+	</script>
+</body>
+</html>

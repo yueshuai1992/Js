@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.bigBox{
+			width:200px;
+			height: 200px;
+			background-color: red;
+		}
+		.box{
+			width: 100px;
+			height:100px;
+			background-color: #ff0;
+		}
+		.acitive{
+			background-color: blue;
+			/*border:10px dotted blue;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="bigBox">
+		<div class="box">
+			
+		</div>
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(".bigBox").hover(
+			//移入移出
+			// function(){
+			// 	$(".bigBox").toggleClass("acitive");
+			// }
+			//移入
+			function(){
+				$(".bigBox").addClass("acitive");
+			},//必须加逗号
+			function(){
+				$(".bigBox").removeClass("acitive")
+			}
+		)
+		// $(".box").mouseout(function(){
+		// 	$(".box").addClass("acitive");
+		// });
+
+	</script>
+</body>
+</html>

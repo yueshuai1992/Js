@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="tet">
+	<input type="button" id="but" value="添加li">
+	<input type="button" id="dellbut" value="删除li">
+	<ul id="ul1">
+		<li>行   儿飞飞<span>删除</span></li>
+		<li>合伙人个人<span>删除</span></li>
+		<li>经济体和合同<span>删除</span></li>
+		<li>王飞飞还以为<span>删除</span></li>
+	</ul>
+	<script>
+		var dBut = document.getElementById("dellbut");
+		var aUl = document.getElementById("ul1");
+		var del = document.getElementsByTagName("span");
+		for(var i = 0;i<del.length;i++){
+			del[i].onclick = function(){
+				aUl.removeChild(this.parentNode);
+
+			}
+		}
+		
+		
+	</script>
+</body>
+</html>

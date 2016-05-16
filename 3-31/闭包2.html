@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li class="num">1</li>
+		<li class="num">2</li>
+		<li class="num">3</li>
+		<li class="num">4</li>
+	</ul>
+	<script>
+		function big(){
+			var x =10;
+			function mid(){
+				var m =20;
+				var n = 30;
+				function sm(){
+					var x =40;
+					function ssm(){
+						alert(x);
+					}
+					return ssm;
+				}
+				return sm;
+			}
+			return mid;
+		}
+		big()()()();
+	</script>
+</body>
+</html>

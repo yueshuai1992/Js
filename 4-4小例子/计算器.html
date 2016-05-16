@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#counter{
+			padding:15px;
+			width:304px;
+			height: 405px;
+			margin:0px auto;
+			background-color: #cccccc;
+		}
+		#txt{
+			width:300px;
+			height:100px;
+		}
+		.num,.sign,.del{
+			display: block;
+			float: left;
+			width:101px;
+			height:50px;
+		}
+		
+		.result{
+			display: block;
+			float: left;
+			width:202px;
+			height:50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="counter">
+		<input type="text" id="txt" placeholder="计算器">
+		<input type="button" class="num" value="9">
+		<input type="button" class="num" value="8">
+		<input type="button" class="num" value="7">
+		<input type="button" class="num" value="6">
+		<input type="button" class="num" value="5">
+		<input type="button" class="num" value="4">
+		<input type="button" class="num" value="3">
+		<input type="button" class="num" value="2">
+		<input type="button" class="num" value="1">
+		<input type="button" class="num" value="0">
+		<input type="button" class="sign" value="+">
+		<input type="button" class="sign" value="-">
+		<input type="button" class="sign" value="*">
+		<input type="button" class="sign" value="/">
+		<input type="button" class="del" value="C">
+		<input type="button" class="num" value=".">
+		<input type="button" class="result" value="=">
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		var str="";
+		var num1=0;
+		var num2=0;
+		var sign="";
+		var re=0;
+		$(".num").click(function(){
+			str=str+$(this).val();
+			$("#txt").val(str);
+		});
+		$(".sign").click(function(){
+			num1 = Number(str);
+			str="";
+			sign=$(this).val();
+
+		});
+		$(".result").click(function(){
+			num2=Number(str);
+			switch(sign){
+				case "+":re=num1+num2;break;
+				case "-":re=num1-num2;break;
+				case "*":re=num1*num2;break;
+				case "/":re=num1/num2;break;
+			}
+			$("#txt").val(re);
+		})
+		$(".del").click(function(){
+			str="";
+			$("#txt").val(str);
+			num1=0;
+			num2=0;
+			sign="";
+			re=0;
+		})
+	</script>
+</body>
+</html>

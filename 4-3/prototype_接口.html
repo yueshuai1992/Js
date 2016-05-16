@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li class="ali">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<script>
+		function IPoit(){
+			this.x=5;
+			this.y=6;
+		};
+		// var ip = new IPoit();
+		function Point(){
+
+		};
+		Point.prototype = new IPoit();
+		var p = new Point();
+		for(var i in p){
+			alert(p[i])
+		}
+	</script>
+</body>
+</html>

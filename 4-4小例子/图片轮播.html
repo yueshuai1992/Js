@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		#bigBox{
+			width:500px;
+			height:500px;
+			overflow: hidden;
+		}
+		#longBox{
+			width:2000px;
+			height: 500px;
+		}
+		.list{
+			width:30px;
+			height: 30px;
+			list-style: none;
+			text-align: center;
+			line-height: 30px;
+			border: 1px dotted red;
+			float: left;
+		}
+		img{
+			display: block;
+			float: left;
+		}
+		ul{
+			position: absolute;
+			top:450px;
+			left:350px;
+		}
+		.list{
+
+		}
+	</style>
+</head>
+<body>
+	<div id="bigBox">
+		<div id="longBox">
+			<img src="1.jpg" alt="" width=500px; height=500px>
+			<img src="2.jpg" alt="" width=500px; height=500px>
+			<img src="3.jpg" alt="" width=500px; height=500px>
+			<img src="4.jpg" alt="" width=500px; height=500px>
+		</div>
+	</div>
+	<ul>
+		<li class="list">1</li>
+		<li class="list">2</li>
+		<li class="list">3</li>
+		<li class="list">4</li>
+	</ul>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(".list").click(function(){
+			
+			var ii = $(this).index();
+			$(this).css("background-color","red");
+			$(this).siblings().css("background-color","#fff");
+			$("#longBox").animate({"marginLeft":ii*(-500)},1000);
+			
+		})
+		var x = 0;	
+		function fun(){
+			$(".list").eq(x).css("background-color","red");
+			$(".list").eq(x).siblings().css("background-color","#fff");
+			$("#longBox").animate({"marginLeft":x*(-500)},1000);
+			
+			if(x<3){
+				x++;
+			}
+			else{
+				x=0;
+			}
+		
+		}	
+		var t =setInterval(fun,1000);
+
+		
+		
+		$(".list").mouseenter(function(){
+			clearInterval(t);
+		})
+		$(".list").mouseleave(function(){
+			t=setInterval(fun,1000);
+		})
+		
+	
+
+	</script>
+</body>
+</html>

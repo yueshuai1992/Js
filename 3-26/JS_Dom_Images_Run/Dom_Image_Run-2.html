@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		.num{
+			width:30px;
+			height:30px;
+			border:1px red dotted;
+			float:left;
+			list-style: none;
+			line-height: 30px;
+			text-align: center;
+			cursor:pointer;
+		}
+		.bg-red{
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<img src="1.jpg" alt="" id="img" width="400px" height="400px">
+	<ul id="list">
+		<li class="num">1</li>
+		<li class="num">2</li>
+		<li class="num">3</li>
+		<li class="num">4</li>
+		<li class="num">5</li>
+	</ul>
+	<script>
+		var aImg = document.getElementById("img");
+		var aList = document.getElementById("list");
+		var aNum = document.getElementsByClassName("num");
+		var pic = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"];
+		for(var i = 0; i<aNum.length;i++){
+			aNum[i].onclick = function(){
+				var ind = index(this);
+				aImg.src = pic[ind];
+				addClass(this,"bg-red");
+				var sib = siblings(this);
+				for(var j = 0;j<sib.length;j++){
+					removeClass(sib[j],"bg-red");
+				}
+				
+			}
+		}
+		function index(node){
+			var arr=node.parentNode.children;
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]==node){
+					return i;
+				}
+			}
+		}
+		function addClass(node,styleClass){
+			node.className = node.className+" "+styleClass;
+		}
+		function removeClass(node,styleClass){
+			var nArr = node.className.split(" ");
+			var newArr = [];
+			for(var i =0;i<nArr.length;i++){
+				if(nArr[i]!=styleClass){
+					newArr.push(nArr[i]);
+				}
+				var str = newArr.join(" ");
+				node.className=str;
+			}
+		}
+		function siblings(node){
+			var arr = node.parentNode.children;
+			var newArr = [];
+			for(var i = 0; i < arr.length; i++){
+				if(arr[i] != node)
+				{
+					newArr.push(arr[i]);
+				}
+			}
+			return newArr;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="tet">
+	<input type="button" id="but" value="添加">
+	<ul id="list">
+		<li>fefefefef <span class="del">删除</span></li>
+		<li>yjyjyjy <span class="del">删除</span></li>
+		<li>brbrbrb <span class="del">删除</span></li>
+		<li>yyyytyty <span class="del">删除</span></li>
+		<li>pououiouo <span class="del">删除</span></li>
+	</ul>
+	<script>
+		var aTet = document.getElementById("tet");
+		var aBut = document.getElementById("but");
+		var aList = document.getElementById("list");
+		aBut.onclick = function(){
+			var cLi = document.createElement("li");
+			var cSpan = document.createElement("span");
+			cSpan.className="del";
+			aList.appendChild(cLi);
+			var nText = aTet.value;
+			var aText = document.createTextNode(nText);
+			cLi.appendChild(aText);
+			cLi.appendChild(cSpan);
+			cSpan.innerHTML = "删除";
+		}
+		var aSpan = document.getElementsByTagName("span");
+		// for(var i=0;i<aSpan.length;i++){
+		// 	aSpan[i].onclick = function(){
+		// 		aList.removeChild(this.parentNode);
+		// 	}
+		// }
+		
+		aList.onclick = function(event){
+			var span = event.target;
+			if(span.className=="del"){
+				aList.removeChild(span.parentNode);
+			}
+		}
+	</script>
+
+</body>
+</html>

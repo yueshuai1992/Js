@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var obj = {}
+		obj.name="小明";
+		obj.age =23;
+		obj.color="红色";
+		
+		var arr = [1,2,1];
+		for(var j in arr){
+			console.log(typeof(j)); //j是个字符串
+		}
+		for(var i in obj){
+			console.log(i);//获取对象属性，i为属性名
+			
+			obj[i] = "xiaohong"
+			alert(obj[i])//obj[i]为obj的属性名可以修改属性值
+		}
+	</script>
+	
+</body>
+</html>

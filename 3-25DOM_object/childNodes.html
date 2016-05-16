@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="list">
+		<li>ffefefe</li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script>
+		var oUl = document.getElementById("list");
+		alert(oUl.childNodes.length);//7
+		alert(oUl.children.length);//3children用发要好过与childNodes
+		// for(var i=0;i<oUl.childNodes.length;i++){
+		// 	alert(oUl.childNodes[i].nodeType);
+		// 	if(oUl.childNodes[i].nodeType==1){
+		// 		oUl.childNodes[i].style.background="red";
+		// 	}
+		// }
+		// alert(oUl.childNodes[0].nodeName);//文本节点返回值是#text
+		// alert(oUl.nodeName);//元素节点返回的是标签名称UL
+		// alert(oUl.nodeValue);//返回值是一个null
+		// alert(oUl.childNodes[0].nodeValue);//返回值是一个空串
+	</script>
+</body>
+</html>

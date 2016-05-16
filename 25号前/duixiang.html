@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text">
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		var cat = {
+			name:"mimi",
+			age:28,
+			sayName:function(){
+				document.write("我的名字是"+this.name+"<br/>");
+				return this;
+			},
+			eat:function(food){
+				document.write("吃"+food);
+				return this;
+			},	
+		}
+	
+		cat.sayName().eat("鱼");
+	
+	</script>
+
+	
+</body>
+</html>

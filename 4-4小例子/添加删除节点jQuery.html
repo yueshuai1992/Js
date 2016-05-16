@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加删除节点jQuery</title>
+</head>
+<body>
+	<input type="text" placeholder = "请输入水果" id="tet">
+	<input type="button" value="添加" id="add">
+	<input type="button" value="删除" id="rem">
+	<ul id="list">
+		<li class="Li">水蜜桃</li>
+		<li class="Li">大鸭梨</li>
+		<li class="Li">哈密瓜</li>
+		<li class="Li">红苹果</li>
+	</ul>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("#add").click(function(){
+			var str =$("#tet").val() 
+			$("#list").append("<li>"+str+"<span>"+"删除"+"</span>"+"</li>");
+		})
+	
+
+	</script>
+</body>
+</html>

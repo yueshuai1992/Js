@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr = [3,6,"小明",function(){x=1;return; }];
+		for(var x=0;x<arr.length;x++){
+			document.write(arr[x]);
+		}
+		arr.unshift("小红");
+		document.write("<br/>"+arr+"<br/>");
+		arr.shift();
+		document.write(arr+"<br/>");
+		arr.push(6);
+		document.write(arr+"<br/>");
+		arr.pop();
+		document.write(arr+"<br/>");
+	</script>
+</body>
+</html>

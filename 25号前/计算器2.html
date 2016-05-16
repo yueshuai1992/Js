@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	input{
+		width:30px;
+		height:30px;
+	}
+	.tet{
+		width:300px;
+		height:50px;
+	}
+	</style>
+</head>
+<body>
+	<input class="tet" type="text"><br>
+	<input type="button" class="number" value="1">
+	<input type="button" class="number" value="2">
+	<input type="button" class="number" value="3">
+	<input type="button" class="number" value="4">
+	<input type="button" class="number" value="5">
+	<input type="button" class="number" value="6">
+	<input type="button" class="number" value="7">
+	<input type="button" class="number" value="8"><br>
+	<input type="button" class="number" value="9">
+	<input type="button" class="number" value="0">
+	<input type="button" class="sign" value="+">
+	<input type="button" class="sign" value="-">
+	<input type="button" class="sign" value="*">
+	<input type="button" class="sign" value="/">
+	<input type="button" class="number" value=".">
+	<input type="button" class="result" value="=">
+	<input type="button" class="clear" value="C">
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		var x ="";
+		var s ="";
+		var num1 = 0;
+		var num2 = 0;
+		var result=0;
+
+		$(".number").click(function(){
+			x =x + $(this).val();
+			
+			$(".tet").val(x);
+		})
+		$(".sign").click(function(){
+			num1 = Number(x);
+			s=$(this).val();
+			$(".tet").val(x);
+			x="";
+
+		})
+		$(".result").click(function(){
+			num2=Number(x);
+			switch(s){
+				case "+": result=num1+num2;break;
+				case "-": result=num1-num2;break;
+				case "*": result=num1*num2;break;
+				case "/": result=num1/num2;break;
+			}
+			$(".tet").val(result);
+
+		})
+		$(".clear").click(function(){
+			$(".tet").val("");
+			x="";
+			s="";
+		})
+	</script>
+</body>
+</html>

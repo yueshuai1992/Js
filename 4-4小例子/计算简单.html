@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单计算</title>
+	<style>
+		#sign{
+			width:80px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="num1"  placeholder = "情输入第一个数字">
+	<input type="text" id="sign"  placeholder = "情输入运算符">
+	<input type="text" id="num2"  placeholder = "情输入第二个数字">
+	<span>=</span>
+	<input type="text" id="result" placeholder ="结果">
+	<input type="button" id="but" value="计算">
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("#but").click(function(){
+			var n1 = Number($("#num1").val());
+			var si = $("#sign").val();
+			var n2 = Number($("#num2").val());
+			var re = 0;
+			switch (si){
+				case "+":re=n1+n2;break;
+				case "-":re=n1-n2;break;
+				case "*":re=n1*n2;break;
+				case "/":re=n1/n2;break;
+			}
+			$("#result").val(re);
+		})
+		
+	</script>
+</body>
+</html>

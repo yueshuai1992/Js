@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+	function inc(ab){
+		var a = ab;
+		var b = function(){
+			a++ ;
+			alert(a)
+		}
+		return b;
+	}
+	var  c = inc(3);
+	alert(c);
+	alert(c);
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="list">
+		<li>ffefefe <span>隐藏</span></li>
+		<li>afefefe efef <span>隐藏</span></li>
+		<li>fefefefefafefavvbe <span>隐藏</span></li>
+	</ul>
+	<script>
+		var aSpan = document.getElementsByTagName("span");
+		for(var i=0;i<aSpan.length;i++){
+			aSpan[i].onclick=function(){
+				this.parentNode.style.display="none";
+			}
+			
+		}
+	</script>
+</body>
+</html>

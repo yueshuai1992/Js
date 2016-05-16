@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function test(){
+			for(var i = 0;i<5;i++){
+				(function(x){
+					setTimeout(function(){console.log(x)},100);
+				})(i)
+				
+			}
+		}
+		test();
+	</script>
+</body>
+</html>

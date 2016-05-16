@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加">
+	<ul id="list">
+		<li>香蕉 <span class="del"> 删除</span></li>
+		<li>苹果 <span class="del"> 删除</span></li>
+		<li>鸭梨 <span class="del"> 删除</span></li>
+	</ul>
+
+	<script type="text/javascript">
+
+		var oTxt = document.getElementById("txt");
+		var oBtn = document.getElementById("btn");
+		var oUl = document.getElementById("list");
+
+		oBtn.onclick = function(){
+			var val = oTxt.value;
+			var oLi = document.createElement("li");
+			var oText = document.createTextNode(val);
+			oLi.appendChild(oText);
+			oUl.appendChild(oLi);
+		}
+
+		// var div = document.createElement("div");
+		// div.id = "box";
+		// div.className = "testBox abc";
+		// console.log(div);
+		// div.style = {
+		// 	"color":"red",
+		// 	"background-color":"red"
+		// }
+
+		var aDel = document.getElementsByClassName("del");
+		for(var i =0;i<aDel.length;i++){
+			aDel[i].onclick = function(){
+				oUl.removeChild(this.parentNode);
+			}
+		}
+
+		function remove(node){
+			node.parentNode.removeChild()
+		}
+
+	</script>
+
+</body>
+</html>

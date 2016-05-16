@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="tet">
+	<input type="button" id="but" value="添加li">
+	<ul id="ul1"></ul>
+	<script>
+		var tet = document.getElementById("tet");
+		var aBut = document.getElementById("but");
+		var aUl = document.getElementById("ul1");
+		aBut.onclick=function(){
+			var cLi = document.createElement("li");
+			var aLi = document.getElementsByTagName("li");
+			//方法1
+			var text = tet.value;
+			var cText = document.createTextNode(text);
+			aUl.appendChild(cLi);//在末尾加入元素节点
+			// if(aLi.length>0){
+			// 	aUl.insertBefore(cLi,aLi[0]);
+			// }
+			// else
+			// {
+			// 	aUl.appendChild(cLi);
+			// }
+			
+			// //cLi.appendChild(cText);//方法1
+			cLi.innerHTML = tet.value;//方法2
+
+		}
+		
+	</script>
+</body>
+</html>

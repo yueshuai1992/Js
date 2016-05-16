@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		#head{
+		
+			height: 500px;
+			background-color: #cccccc;
+		}
+		#banner{
+		
+			height: 500px;
+			background-color: red;
+		}
+		#bottom{
+		
+			height: 500px;
+			background-color: #ccccff;
+		}
+		#footer{
+		
+			height: 500px;
+			background-color: #ffcccc;
+		}
+		#list li {
+			width: 70px;
+			height: 25px;
+			border: 1px dotted red;
+			float:left;
+			text-align: center;
+			line-height: 25px;
+			list-style: none;
+		}
+		#list {
+			position:fixed;
+			top:0;
+		}
+		#footer #boult{
+			width:50px;
+			height: 50px;
+			/*border: 3px dotted;*/
+			position:fixed;
+			bottom:20px;
+			right: 50px;
+			display:none;
+			background-image: url("1.png");
+			background-repeat:no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div id="head">
+		<ul id="list">
+			<a href="#head"><li>主页</li></a>
+			<a href="#banner"><li>内容</li></a>
+			<a href="#bottom"><li>功能</li></a>
+			<a href="#footer"><li>事件</li></a>
+		</ul>
+	</div>
+	<div id="banner"></div>
+	<div id="bottom"></div>
+	<div id="footer">
+		<divc id="boult">
+			
+		</div>
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(window).scroll(function(){  
+			var x =$(window).scrollTop();
+			if(x>50){     
+		   		$("#boult").css("display","block"); 
+		   	}else{
+		   		$("#boult").css("display","none");
+		   	}  
+		});
+
+		$("#boult").click(function(){
+		   	$("html,body").animate({scrollTop:0},1000);    
+			// $(window).scrollTop(0).animate({"marginTop",0},5000);
+		});
+		$("a").click(function(){
+			var x = $(this).attr("href");
+			var y = $(x).offset().top;
+	
+			
+		   	$("html,body").animate({scrollTop:y},1000);   
+		   	return false 
+			// $(window).scrollTop(0).animate({"marginTop",0},5000);
+		});
+		// $("li").click(function(){
+		// 	var x = $(this).index();
+		// 	alert(x)
+		// 	var y = $(x).offset().top;
+			
+		//    	$("html,body").animate({scrollTop:y},1000);    
+		// 	// $(window).scrollTop(0).animate({"marginTop",0},5000);
+		// });
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		img{
+			display: block;
+		}
+		#list{
+			position: absolute;
+			top:280px;
+			left:200px;
+			z-index: 999;
+		}
+		li{
+			text-align: center;
+			list-style:none;
+			float: left;
+			width: 30px;
+			height:30px;
+			border: 1px dotted red;
+			line-height: 30px;
+		}
+		.active{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="pic">
+		<img src="1.jpg" alt="">
+		<img src="2.jpg" alt="">
+		<img src="3.jpg" alt="">
+		<img src="4.jpg" alt="">
+	</div>
+	
+	<ul id="list">
+		<li class="lii">1</li>
+		<li class="lii">2</li>
+		<li class="lii">3</li>
+		<li class="lii">4</li>
+	</ul>
+	<script src="jquery-1.11.1.js"></script>
+	<script src="jquery.cycle.all
+	.js"></script>
+	<script>
+		$("#pic").cycle({
+			befor:function(){
+				  var index = $(this).index();
+				  $("li").eq(index).addClass("active").siblings().removeClass("active");	
+				  // $("li").eq(index).css("background-color","red");
+				  } 
+			  
+			 
+		});
+		$("li").click(function(){
+			var index = $(this).index();
+			$("#pic").cycle(index);
+			$(this).addClass("active").siblings().removeClass("active");
+		})
+	</script>
+</body>
+</html>

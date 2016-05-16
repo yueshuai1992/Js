@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="but" value="addNode">
+	<ul id="list">
+		<li>鸭梨<span class="del">删除</span></li>
+		<li>水蜜桃<span class="del">删除</span></li>
+		<li>苹果<span class="del">删除</span></li>
+		<li>橘子<span class="del">删除</span></li>
+	</ul>
+	<script>
+		var oTxt = document.getElementById("txt");
+		var oBut = document.getElementById("but");
+		var oList = document.getElementById("list");
+		var num = document.getElementsByClassName("li");
+		oBut.onclick = function(){
+			var oLi = document.createElement("li");
+			oList.appendChild(oLi);
+			var str = oTxt.value;
+			oLi.innerHTML = str;
+			//添加span元素节点
+			var oSpan = document.createElement("span");
+			oLi.appendChild(oSpan);
+			oSpan.className="del";
+			oSpan.innerHTML="删除";
+		}
+		oList.onclick = function(event){
+			var ev = event.target;
+			if(ev.className == "del"){
+				var delParen = ev.parentNode;
+				this.removeChild(delParen);
+			}
+			
+		}
+
+	</script>
+</body>
+</html>

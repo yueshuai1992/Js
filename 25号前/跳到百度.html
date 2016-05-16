@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p><span></span>秒后跳转到百度！</p>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		var mafuyun=5;
+		$("span").text(mafuyun);
+		setInterval(function(){
+			
+			mafuyun--;
+			$("span").text(mafuyun);
+		},1000)
+		setTimeout(function(){
+			location.href="http://baidu.com";
+		},5000)
+	</script>
+</body>
+</html>

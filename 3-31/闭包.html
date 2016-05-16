@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li class="num">1</li>
+		<li class="num">2</li>
+		<li class="num">3</li>
+		<li class="num">4</li>
+	</ul>
+	<script>
+		//获取索引
+		var aNum = document.getElementsByClassName("num");
+		
+		for(var i  = 0 ; i<aNum.length; i++){
+			aNum[i].onclick =  (function fun(x){
+					return function(){
+							console.log(x)
+						
+					}
+					
+			})(i)
+		}
+
+		//获取的是函数循环结束
+		function createFun(){
+			var arr = [];
+			for (var i = 0;i<10;i++){
+				arr[i]=function(){
+					return i ;
+				}
+			}
+			return arr;
+		};
+		var result = createFun();
+		var x = result[5]();
+		alert(x);
+		//取循环单个的值
+		function createFun1(){
+			var arr = [];
+			for (var i = 0;i<10;i++){
+				arr[i]=(function(x){
+					return function(){
+						return x ;
+					}
+				})(i)
+			}
+			return arr;
+		};
+		var result1 = createFun1();
+		var x = result1[6]();
+		alert(x);
+
+
+		//获取索引
+
+	</script>
+</body>
+</html>
